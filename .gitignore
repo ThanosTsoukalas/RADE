@@ -1,8 +1,6 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/settings.json
-build/build.exe
-build/SDL2.dll
 libs/include/SDL2/begin_code.h
 libs/include/SDL2/close_code.h
 libs/include/SDL2/SDL_assert.h
