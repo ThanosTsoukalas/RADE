@@ -89,3 +89,4 @@ libs/lib/libSDL2main.la
 libs/lib/cmake/SDL2/sdl2-config-version.cmake
 libs/lib/cmake/SDL2/sdl2-config.cmake
 libs/lib/pkgconfig/sdl2.pc
+build/build.exe

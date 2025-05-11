@@ -25,22 +25,22 @@ public:
         return 0;
     }
 
-    int await_for_close(){
-        SDL_Event windowEvent;
-        while (true){
-            if (SDL_PollEvent( &windowEvent)){
-                if (SDL_QUIT == windowEvent.type){
-                    break;
-                }
-            }
-        }
-        // destroy the window after the while loop is broken
-    
-        SDL_DestroyWindow(t_window);
-        SDL_Quit();
-        return EXIT_SUCCESS;
-    }
+    void registerEvents(SDL_Event &event) {
+        if (event.type == SDL_KEYDOWN) {
+            // if (event.key.keysym.sym == SDLK_LEFT) {
+            //     pos_x -= 10; // Move rectangle left
+            // } else if (event.key.keysym.sym == SDLK_RIGHT) {
+            //     pos_x += 10; // Move rectangle right
+            // } else if (event.key.keysym.sym == SDLK_UP) {
+            //     pos_y -= 10; // Move rectangle up
+            // } else if (event.key.keysym.sym == SDLK_DOWN) {
+            //     pos_y += 10; // Move rectangle down
+            // }
 
+            std::cout << "Key press detected." << std::endl;
+        }
+    }
+    
     SDL_Window *return_sdl_window_type(){
         return t_window;
     }

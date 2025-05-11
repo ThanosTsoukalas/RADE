@@ -2,6 +2,7 @@
 #define REC_H
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_video.h>
+#include <SDL2/SDL_events.h>
 #include <iostream>
 
 class Rectangle{
@@ -42,6 +43,7 @@ class Rectangle{
         
             SDL_RenderPresent(rec_render);
         }
+
         SDL_Rect return_sdl_rect_type(){
             return rectangle;
         }
