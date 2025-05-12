@@ -5,7 +5,6 @@
 #include "window.h"
 #include "rectangle.h"
 
-// this is my screen resolution (HP elite x2)
 int WIDTH = 800, HEIGHT = 600;
 
 int main(int argc, char *argv[]) {
@@ -15,12 +14,12 @@ int main(int argc, char *argv[]) {
 
     SDL_Renderer *renderer = SDL_CreateRenderer(window.return_sdl_window_type(), -1, SDL_RENDERER_ACCELERATED);
 
-    Rectangle rect(0, 0, 250, 250);
+    Rectangle rect(0, 0, 250, 250, false);
 
     bool running = true;
     
     SDL_Event event;
-
+ 
     // drawing and event handling loop
     while (running) {
         while (SDL_PollEvent(&event)) {
@@ -31,9 +30,10 @@ int main(int argc, char *argv[]) {
                 return EXIT_SUCCESS;
             }
             else {
-                window.registerEvents(event);
+                rect.registerEvents(event);
             }
         }
+        std::cout << "Updated frame" << std::endl;
         rect.draw(255, 255, 255, 255, 255, 255, 255, 255, renderer, WIDTH, HEIGHT);
     }
 

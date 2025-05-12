@@ -3,6 +3,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_video.h>
+#include "rectangle.h"
 
 class Window{
 public:
@@ -23,22 +24,6 @@ public:
             return 1;
         }
         return 0;
-    }
-
-    void registerEvents(SDL_Event &event) {
-        if (event.type == SDL_KEYDOWN) {
-            // if (event.key.keysym.sym == SDLK_LEFT) {
-            //     pos_x -= 10; // Move rectangle left
-            // } else if (event.key.keysym.sym == SDLK_RIGHT) {
-            //     pos_x += 10; // Move rectangle right
-            // } else if (event.key.keysym.sym == SDLK_UP) {
-            //     pos_y -= 10; // Move rectangle up
-            // } else if (event.key.keysym.sym == SDLK_DOWN) {
-            //     pos_y += 10; // Move rectangle down
-            // }
-
-            std::cout << "Key press detected." << std::endl;
-        }
     }
     
     SDL_Window *return_sdl_window_type(){
