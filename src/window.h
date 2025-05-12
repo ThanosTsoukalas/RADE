@@ -30,5 +30,4 @@ public:
         return t_window;
     }
 };
-// fix that shit
 #endif

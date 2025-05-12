@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 
     SDL_Renderer *renderer = SDL_CreateRenderer(window.return_sdl_window_type(), -1, SDL_RENDERER_ACCELERATED);
 
-    Rectangle rect(0, 0, 250, 250, false);
+    Rectangle rect(0, 0, 250, 250, true);
 
     bool running = true;
     

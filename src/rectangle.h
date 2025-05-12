@@ -37,7 +37,11 @@ class Rectangle{
             if (is_centered == true){
                 pos_x = (window_width/2) - (width/2);
                 pos_y = (window_height/2) - (height/2);
+                
             }
+            // making is_centered false, because we don't want it to be true the second time
+            // we call the draw function after an event.
+            is_centered = false;
 
             rectangle.x = pos_x;
             rectangle.y = pos_y;
