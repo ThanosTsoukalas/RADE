@@ -45,10 +45,12 @@ class Rectangle{
 
             rectangle.x = pos_x;
             rectangle.y = pos_y;
-            SDL_SetRenderDrawColor(rec_render, 255, 255, 255, 255);
+
+            SDL_SetRenderDrawColor(rec_render, border_color_R, border_color_G, border_color_B, border_color_alpha); // Set Outline Color
             SDL_RenderDrawRect(rec_render, &rectangle); // make the outline
+            SDL_SetRenderDrawColor(rec_render, fill_color_R, fill_color_G, fill_color_B, fill_color_alpha); // Set Fill Color
             SDL_RenderFillRect(rec_render, &rectangle); // fill the shape
-            SDL_SetRenderDrawColor(rec_render, 0, 0, 0, 255);
+            SDL_SetRenderDrawColor(rec_render, 0, 0, 0, 255); // set render color to black in order to draw the background (TODO: Make the color dynamic)
             SDL_RenderPresent(rec_render);
         }
 
