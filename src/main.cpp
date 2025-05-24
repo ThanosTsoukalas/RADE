@@ -1,14 +1,18 @@
 #include <iostream>
+#include <ctime>
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_video.h>
 #include <SDL2/SDL_events.h>
-#include "window.h"
-#include "rectangle.h"
 
-int WIDTH = 800, HEIGHT = 600;
+#include "RADE/window.h"
+#include "RADE/rectangle.h"
+
+int WIDTH = 600, HEIGHT = 800;
 
 int main(int argc, char *argv[]) {
     SDL_Init(SDL_INIT_EVERYTHING);
+
     Window window("Game", SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_ALLOW_HIGHDPI);
     window.initialize();
 
@@ -16,10 +20,10 @@ int main(int argc, char *argv[]) {
 
     Rectangle rect(0, 0, 250, 250, true);
 
+    SDL_Event event;
+
     bool running = true;
     
-    SDL_Event event;
- 
     // drawing and event handling loop
     while (running) {
         while (SDL_PollEvent(&event)) {
@@ -33,7 +37,6 @@ int main(int argc, char *argv[]) {
                 rect.registerEvents(event);
             }
         }
-        std::cout << "Updated frame" << std::endl;
         rect.draw(255, 255, 255, 255, 255, 255, 255, 255, renderer, WIDTH, HEIGHT);
     }
 
