@@ -1,3 +1,7 @@
+// This is example code for the engine. It features most
+// (and if not all) the features the engine currently has.
+// This code IS NOT part of the engine itself.
+
 #include <iostream>
 #include <ctime>
 
@@ -18,7 +22,7 @@ int main(int argc, char *argv[]) {
 
     SDL_Renderer *renderer = SDL_CreateRenderer(window.return_sdl_window_type(), -1, SDL_RENDERER_ACCELERATED);
 
-    Rectangle rect(0, 0, 250, 250, true);
+    Rectangle rect(0, 0, 250, 250, CENTERED);
 
     SDL_Event event;
 
